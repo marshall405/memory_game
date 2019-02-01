@@ -53,7 +53,10 @@ header h1 {
     border: 1px solid black;
     cursor: pointer;
 }
-
+#game-container div:hover {
+    background-color: #343434;
+    color: white;
+}
 .match {
     color: green;
     border: 1px solid green !important;
