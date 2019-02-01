@@ -5,8 +5,8 @@
     let tileOne;
     let tileTwo;
     let guesses = 0;
-    let movesTillWin = 0;
-    let moveCount = 0;
+    let matchesTillWin = 0;
+    let matchCount = 0;
     let counter = 0;
     let showCurrentDiv = true;
     newGame.addEventListener('click', () => {
@@ -32,11 +32,12 @@
     function startNewGame(numberOfTiles) {
         
         counter = 0;
-        moveCount = 0;
+        matchCount = 0;
         guesses = 0;
         let arrayOfTiles = createArrayOfTiles(numberOfTiles);
         let randomizedArray = shuffleArray(arrayOfTiles);
-        movesTillWin = numberOfTiles/2;
+        // set number of matches before you win
+        matchesTillWin = numberOfTiles/2;
         // create div tiles
         let arrayOfDivs = createTiles(randomizedArray);
         // add tiles to game
@@ -88,7 +89,7 @@
         let arrayOfDivs = [];
         arrayOfTiles.forEach( (num) => {
             let div = document.createElement('div');
-            div.className = num;
+            div.className = num + ' tile' ;
             arrayOfDivs.push(div);
         });
         return arrayOfDivs;
@@ -103,13 +104,19 @@
         arrayOfDivs.forEach( item => game.appendChild(item));
     }
     function checkForMatch() {
+        // if its a match!
         if(tileOne.className === tileTwo.className) {
+            // call function to set current divs className to 'match'
             updateTiles();
+            // reset tiles
             tileOne = '';
             tileTwo = '';
-            moveCount += 1;
-            console.log(moveCount, movesTillWin);
-            if(movesTillWin === moveCount){
+    
+            matchCount += 1;
+            // delete someday
+            console.log(matchCount, matchesTillWin);
+            // 
+            if(matchesTillWin === matchCount){
                 // winner
                 showWinningMessage(true);
             }
@@ -133,7 +140,9 @@
     }
     function showDiv(div) {
         if(showCurrentDiv){
-            div.innerHTML = div.className;
+            let arrayOfClassnames = div.className.split(' ');
+
+            div.innerHTML = arrayOfClassnames[0];
         }
         if(guesses === 0){
             tileOne = div;
@@ -167,7 +176,7 @@
         let count = document.getElementById('count');
         count.innerHTML = `Number of Guesses: ${counter}`;
         let minGuesses = document.getElementById('min-guesses');
-        minGuesses.innerHTML = `Min. Number of Guesses: ${movesTillWin}`;
+        minGuesses.innerHTML = `Min. Number of Guesses: ${matchesTillWin}`;
     }
     function showWinningMessage(isTrue) {
         let winner = document.getElementById('winner-message');
