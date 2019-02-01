@@ -1,0 +1,72 @@
+
+/* Container */
+#container {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+/* Header */
+
+header h1 {
+    text-align: center;
+}
+
+
+
+
+
+/*  Game Settings */
+#settings {
+    text-align: center;
+}
+/* number-required message */
+#number-required {
+    /* default hide message */
+    display: none;
+    margin: 0;
+    padding: 0;
+    color: red;
+}
+
+/* Game Container */
+#game-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 10px auto;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+   
+}
+#game-container div {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.match {
+    color: green;
+    border: 1px solid green !important;
+    background-color: rgba(0,0,0,.4);
+    cursor: initial !important;
+}
+
+
+/* Winner Message */
+#winner-message {
+    margin: 5px;
+    color: #343434;
+    font-size: 12px;
+    text-align: center;
+    display: none;
+}

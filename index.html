@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Memory Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+</head>
+<body>
+    <div id='container'>
+        <header>
+                <h1> Memory Game </h1>
+                <div id='settings'>
+                    <label for='number-of-tiles'>Number of Tiles</label>
+                    <input id='number-of-tiles' type='number' min='10' max='100' step='10' value='10'>
+                    <input type='button' value='start new game' id='game-button'>
+                    <h5 id='number-required'> A number between 10 and 100 is required.</h5>
+                </div>
+            </header>
+            <div id='stats'>
+                <p id='count'> Number of Guesses: 0</p>
+                <p id='min-guesses'> Min. Number of Guesses: 0</p>
+            </div>
+           
+            <div id='winner-message'>
+                <h1> Congrats, you have finished the game! </h1>
+            </div>
+            <div id='game-container'>
+                
+            </div>
+            
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
