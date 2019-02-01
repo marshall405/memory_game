@@ -123,6 +123,8 @@
         } else {
             tileOne.addEventListener('click', handleClick);
             tileTwo.addEventListener('click', handleClick);
+            changeTileBG(tileOne, 'remove');
+            changeTileBG(tileTwo, 'remove');
             tileOne.innerHTML = '';
             tileTwo.innerHTML = '';
 
@@ -137,12 +139,14 @@
     }
     function handleClick(){
         showDiv(this);
+        
     }
     function showDiv(div) {
         if(showCurrentDiv){
+            // need the first class of div, the value 
             let arrayOfClassnames = div.className.split(' ');
-
             div.innerHTML = arrayOfClassnames[0];
+            changeTileBG(div, 'add');
         }
         if(guesses === 0){
             tileOne = div;
@@ -185,6 +189,15 @@
         } else {
             winner.style.display = 'none';
         }
-       
+    }
+    function changeTileBG(div, command) {
+        let arrayOfClassnames = div.className.split(' ');
+        if(command === 'add'){
+            div.className = arrayOfClassnames[0] + ' currentTile';
+        }
+        if(command === 'remove'){
+            div.className = arrayOfClassnames[0] + ' tile';
+        }
+        
     }
 })();

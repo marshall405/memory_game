@@ -46,23 +46,27 @@ header h1 {
     width: 50px;
     height: 50px;
     margin: 1px;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 .tile {
-    border: 1px solid black;
+    background-color: #828282;
     cursor: pointer;
+    transition: all 1s ease-out;
 }
-.tile:hover {
+
+.currentTile {
+    transition: all .2s ease-out;
     background-color: #343434;
     color: white;
 }
 .match {
-    color: green;
+    color: #828282;
     border: 1px solid green !important;
-    background-color: rgba(0,0,0,.4);
+    background-color: #343434;
     cursor: initial !important;
 }
 
