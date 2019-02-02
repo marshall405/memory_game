@@ -1,3 +1,11 @@
+/* All Styles */
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
+html {
+    font-family: 'Permanent Marker', cursive;
+}
+
+
 
 /* Container */
 #container {
@@ -5,6 +13,7 @@
     min-height: 100vh;
     max-width: 900px;
     margin: 0 auto;
+    padding: 10px;
     border: 1px solid black;
 }
 
@@ -55,7 +64,7 @@ header h1 {
 .tile {
     background-color: #828282;
     cursor: pointer;
-    transition: all 1s ease-out;
+    transition: all .2s ease-out;
 }
 
 .currentTile {
@@ -77,5 +86,6 @@ header h1 {
     color: #343434;
     font-size: 12px;
     text-align: center;
+    text-decoration: underline;
     display: none;
 }

@@ -1,7 +1,6 @@
 (function() {
     'use strict';
-    // add listener to start new game button and check for valid number of tiles
-    const newGame = document.getElementById('game-button');
+    // globals
     let tileOne;
     let tileTwo;
     let guesses = 0;
@@ -9,6 +8,8 @@
     let matchCount = 0;
     let counter = 0;
     let showCurrentDiv = true;
+    // add listener to start new game button and check for valid number of tiles
+    const newGame = document.getElementById('game-button');
     newGame.addEventListener('click', () => {
         const numberOfTiles = document.getElementById('number-of-tiles').value;
         let numberErrorMessage = document.getElementById('number-required');
@@ -30,7 +31,6 @@
 
     // Create startNewGame function that creates a number of tiles using user input
     function startNewGame(numberOfTiles) {
-        
         counter = 0;
         matchCount = 0;
         guesses = 0;
@@ -45,9 +45,9 @@
         addListenersToDivs(arrayOfDivs);
         showWinningMessage(false);
         updateStats();
-        console.log(arrayOfDivs);
-    
     }
+    // load starting game
+    startNewGame(document.getElementById('number-of-tiles').value);
 
     function createArrayOfTiles(numberOfTiles) {
         // create n tiles
@@ -113,9 +113,7 @@
             tileTwo = '';
     
             matchCount += 1;
-            // delete someday
-            console.log(matchCount, matchesTillWin);
-            // 
+        
             if(matchesTillWin === matchCount){
                 // winner
                 showWinningMessage(true);
@@ -168,13 +166,6 @@
     function updateTiles() {
         tileOne.className = 'match';
         tileTwo.className = 'match';
-
-        // tileOne.style.borderColor = 'green';
-        // tileTwo.style.borderColor = 'green';
-        // tileOne.style.backgroundColor = 'rgba(0,0,0,.5)';
-        // tileTwo.style.backgroundColor = 'rgba(0,0,0,.5)';
-        // tileOne.style.color = 'green';
-
     }
     function updateStats() {
         let count = document.getElementById('count');
