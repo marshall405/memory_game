@@ -15,7 +15,7 @@
         let numberErrorMessage = document.getElementById('number-required');
         // check that numberOfTiles is >= 4 and <= 1000 and is an EVEN number
         if(numberOfTiles < 4 || numberOfTiles > 1000) {
-            numberErrorMessage.innerHTML = 'Number of Tiles must be between 4 and 1000.';
+            numberErrorMessage.innerHTML = 'Number of Tiles must be between 4 and 100.';
             numberErrorMessage.style.display = 'block';
         } else if(numberOfTiles % 2 !== 0) {
             // number is ODD
